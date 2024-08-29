@@ -1,48 +1,53 @@
+import { SignIn } from "@clerk/nextjs";
 import {
     Container,
     AppBar,
-    ToolBar,
+    Toolbar,
     Button,
     Link,
     Box,
     Typography,
-    SignUp
   } from "@mui/material";
   
   export default function signUpPage() {
     return (
       <Container maxWidth="sm">
         <AppBar position="static" sx={{ backgroundColor: "#3f51b5" }}>
-          <ToolBar>
+          <Toolbar>
             <Typography
               variant="h6"
               sx={{
-                flexGrowth: 1,
+                flexGrow: 1,
               }}
             >
               FlashCard Saas
             </Typography>
-            <Button colors="inherit">
-              <Link href="/login" passhref>
+
+            <Button color="inherit">
+              <Link href="/login" passHref>
                 Login
               </Link>
             </Button>
-            <Button colors="inherit">
-              <Link href="/login" passhref>
+
+            <Button color="inherit">
+              <Link href="/signup" passHref>
                 Sign Up
               </Link>
             </Button>
-          </ToolBar>
+
+          </Toolbar>
         </AppBar>
+
         <Box 
           display="flex"
           flexDirection="column"
           alignItems="center"
           justifyContent="center">
-              <Typography>Sign Up</Typography>
-              <SignUp/>
+              <Typography>Sign In</Typography>
+              <SignIn/>
         </Box>
+        
       </Container>
-    );
+    )
   }
   

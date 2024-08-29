@@ -1,7 +1,7 @@
 import {
   Container,
   AppBar,
-  ToolBar,
+  Toolbar,
   Button,
   Link,
   Box,
@@ -13,27 +13,29 @@ export default function signUpPage() {
   return (
     <Container maxWidth="sm">
       <AppBar position="static" sx={{ backgroundColor: "#3f51b5" }}>
-        <ToolBar>
+        <Toolbar>
           <Typography
             variant="h6"
             sx={{
-              flexGrowth: 1,
+              flexGrow:1,
             }}
           >
             FlashCard Saas
           </Typography>
-          <Button colors="inherit">
-            <Link href="/login" passhref>
+          <Button color="inherit">
+            <Link href="/login" passHref>
               Login
             </Link>
           </Button>
-          <Button colors="inherit">
-            <Link href="/login" passhref>
+
+          <Button color="inherit">
+            <Link href="/login" passHref>
               Sign Up
             </Link>
           </Button>
-        </ToolBar>
+        </Toolbar>
       </AppBar>
+      
       <Box
         display="flex"
         flexDirection="column"
@@ -41,7 +43,7 @@ export default function signUpPage() {
         justifyContent="center"
       >
         <Typography>Sign In</Typography>
-        <SignIn />
+        <SignIn/>
       </Box>
     </Container>
   );

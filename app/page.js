@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import getStripe from "@/utils/get-stripe";
+import getStripe from "/utils/get-stripe";
 import {
   Container,
   Typography,
@@ -13,7 +13,7 @@ import {
 import {
   SignedIn,
   SignedOut, 
-  userButton} from '@clerk/nextjs'
+  UserButton} from '@clerk/nextjs'
 import Head from "next/head";
 
 export default function Home() {
@@ -53,7 +53,7 @@ export default function Home() {
             Flash Card Saas
           </Typography>
           <SignedOut>
-            <Button color="inherit" href="=/sign-in">
+            <Button color="inherit" href="/sign-in">
               {" "}
               Log In{" "}
             </Button>
@@ -63,11 +63,10 @@ export default function Home() {
             </Button>
           </SignedOut>
           <SignedIn>
-            <userButton/>
+            <UserButton/>
           </SignedIn>
         </Toolbar>
       </AppBar>
-
       <Box
         sx={{
           textAlign: "center",
@@ -121,10 +120,11 @@ export default function Home() {
           </Grid>
         </Grid>
       </Box>
-      <Box sx={{ ny: 6, textAlign: "center" }}>
+      <Box sx={{ my: 6, textAlign: "center" }}>
         <Typography variant="h4" gutterBottom>
           Pricing{" "}
         </Typography>
+
         <Grid container spacing={12}>
           <Grid item xs={12} md={4}>
             <Box
@@ -141,13 +141,13 @@ export default function Home() {
               </Typography>
               <Typography>
                 {""}
-                Access to basics flascard Features
+                Access to basics flashcard features
               </Typography>
-              <Button variant="contained" color="primary">
-                Choose Basics
-              </Button>
+              <Button variant="contained" color="primary" sx={{mt:2
+            }} onClick={{handleSubmit}}>Choose Basics</Button>
             </Box>
           </Grid>
+          
           <Grid item xs={12} md={4}>
             <Box
               sx={{
@@ -157,35 +157,42 @@ export default function Home() {
                 borderRadius: 2,
               }}
             >
-              <Typography variant="h6">Smart Flashcards </Typography>
+              <Typography variant="h5">Pro</Typography>
+              <Typography variant="h6" gutterBottom>
+              $10/month
+              </Typography>
               <Typography>
                 {""}
-                Our AI intelligently breaks down your text into concise
-                flashcards, perfert for studying
+                Access Pro flashcard features and limited storage with priority support
               </Typography>
+              <Button variant="contained" color="primary" sx={{mt:2
+            }} onClick={{handleSubmit}}>Choose Pro</Button>
             </Box>
           </Grid>
+          
+           
           <Grid item xs={12} md={4}>
-            <Typography variant="h6">Smart Flashcards </Typography>
-            <Typography>
-              {""}
-              Our AI intelligently breaks down your text into concise
-              flashcards, perfert for studying
-            </Typography>
+            <Box
+              sx={{
+                p: 3,
+                border: "1px solid",
+                borderColor: "grey.300",
+                borderRadius: 2,
+              }}
+            >
+              <Typography variant="h5">Premium</Typography>
+              <Typography variant="h6" gutterBottom>
+              $100/month
+              </Typography>
+              <Typography>
+                {""}
+                Access Premium flashcard features and unlimited storage with priority support
+              </Typography>
+              <Button variant="contained" color="primary" sx={{mt:2
+            }} onClick={{handleSubmit}}>Choose Premium</Button>
+            </Box>
           </Grid>
-        </Grid>
-        <Grid item xs={12} md={4}>
-          <Typography variant="h6" gutterBottom>
-            {" "}
-            Pro
-          </Typography>
-          <Typography>$10/month</Typography>
-          <Typography>
-            {""}
-            Access Pro flash features and limited storage with priority support
-            <Button variant="contained" color="primary" sx={{nt:2
-            }} onClick={{handleSubmit}}>Choose Pro</Button>
-          </Typography>
+
         </Grid>
       </Box>
     </Container>
